@@ -3,12 +3,14 @@ import dotenv from "dotenv";
 import { testConnection } from "./config/database.js";
 import cors from "cors";
 import AuthRoutes from "./routes/AuthRoutes.js";
+import TaskRoutes from "./routes/TaskRoutes.js";
 const app = express();
 
 app.use(express.json());
 app.use(cors());
 
 app.use("/api/auth", AuthRoutes);
+app.use("/api/task", TaskRoutes);
 
 dotenv.config();
 
